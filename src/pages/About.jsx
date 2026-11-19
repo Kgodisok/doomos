@@ -1,108 +1,80 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { Target, CheckCircle2, ArrowRight } from 'lucide-react'
+import { Target, HeartHandshake, MessageCircle } from 'lucide-react'
+
+const HERO_BG =
+  'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=2000&q=80'
 
 export default function About() {
   return (
-    <div className="bg-white min-h-screen">
-      
-      {/* Hero Header */}
-      <section className="bg-ink text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-3 p-2 pr-4 bg-white/10 rounded-2xl border border-white/15">
-            <img src="/logo.jpg" alt="DooMos Cars" className="h-9 w-auto rounded-lg bg-white p-0.5" />
-            <span className="text-xs font-bold uppercase tracking-wider text-accent">About DooMos Cars</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight">
-            We Buy and Sell Second Hand and New Cars
+    <div>
+      {/* Hero */}
+      <section className="relative">
+        <div className="absolute inset-0">
+          <img src={HERO_BG} alt="" className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/85 to-ink/50" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+          <h1 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
+            About <span className="text-accent">DoomOS</span>
           </h1>
-          <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed pt-2">
-            Drive Your Dream Today. Born out of the frustration of chaotic WhatsApp groups and Facebook car trading communities, DooMos Cars gives motorists a unified, secure, and modern car exchange across South Africa.
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70">
+            One organised home for South Africa's car listings.
           </p>
         </div>
       </section>
 
-      {/* Story & Mission */}
-      <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-accent">The Vision</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink mt-1 mb-4">
-              From Social Chat Groups to a Unified Platform
-            </h2>
-            <div className="text-slate text-sm sm:text-base space-y-4 leading-relaxed">
-              <p>
-                Every day, thousands of South Africans try to buy and sell vehicles inside informal WhatsApp and Facebook communities. Critical details get buried, images get compressed, and verifying prices and condition can be difficult.
-              </p>
-              <p>
-                <strong>DooMos Cars</strong> solves this by standardizing specifications, displaying clear Rand prices, and enabling direct one-click WhatsApp communication between verified buyers and sellers.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-mist rounded-3xl p-8 border border-line shadow-card space-y-4">
-            <h3 className="text-lg font-bold text-ink flex items-center gap-2">
-              <Target className="w-5 h-5 text-accent" />
-              <span>What Sets Us Apart</span>
-            </h3>
-            <ul className="space-y-3 text-sm text-slate">
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>Clear distinction between Pre-Owned, Demo models, and Brand New cars.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>Instant pre-filled WhatsApp enquiry links for direct seller response.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span>Dedicated vehicle inspection checklists and safety guidelines for peace of mind.</span>
-              </li>
-            </ul>
-          </div>
+      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-extrabold tracking-tight text-ink">Our Story</h2>
+        <div className="mt-6 space-y-4 text-base leading-relaxed text-slate">
+          <p>
+            Every day, thousands of cars are bought and sold in South Africa through
+            WhatsApp groups, Facebook groups and community pages. The listings are real,
+            the prices are fair — but they're scattered, hard to search, and disappear
+            within hours.
+          </p>
+          <p>
+            DoomOS was born from that frustration. We bring these advertisements together
+            into one organised, trustworthy platform where buyers can search, filter and
+            compare vehicles — and contact sellers directly on WhatsApp.
+          </p>
+          <p>
+            We're starting in South Africa with a simple promise: no middlemen, no hidden
+            fees, and listings from real people in your community.
+          </p>
         </div>
 
-        {/* Target Coverage */}
-        <div className="bg-ink text-white rounded-3xl p-8 sm:p-12 border border-white/10">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent">South African Footprint</span>
-            <h2 className="text-2xl sm:text-3xl font-bold mt-1">Nationwide Automotive Exchange</h2>
-            <p className="text-gray-400 text-sm mt-2">
-              From Sandton and Pretoria to Cape Town and Durban, DooMos Cars connects motor enthusiasts across South Africa.
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border border-line bg-white p-8 shadow-card">
+            <Target size={26} className="text-accent-dark" />
+            <h3 className="mt-4 text-lg font-bold text-ink">Our Mission</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate">
+              Make every car listing in South Africa discoverable in one place, with the
+              tools buyers need to decide with confidence.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-              <span className="text-3xl font-black text-accent">Gauteng</span>
-              <p className="text-xs text-gray-400 mt-2">Johannesburg, Pretoria, Midrand & Centurion.</p>
-            </div>
-            <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-              <span className="text-3xl font-black text-accent">Western Cape</span>
-              <p className="text-xs text-gray-400 mt-2">Cape Town, Stellenbosch, Paarl & George.</p>
-            </div>
-            <div className="p-6 bg-white/5 rounded-2xl border border-white/10">
-              <span className="text-3xl font-black text-accent">KwaZulu-Natal</span>
-              <p className="text-xs text-gray-400 mt-2">Durban, Umhlanga & Pietermaritzburg.</p>
-            </div>
+          <div className="rounded-2xl border border-line bg-white p-8 shadow-card">
+            <HeartHandshake size={26} className="text-accent-dark" />
+            <h3 className="mt-4 text-lg font-bold text-ink">Our Values</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate">
+              Trust, transparency and community. Sellers keep full control of their sale;
+              buyers deal directly with real owners.
+            </p>
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="text-center pt-4">
-          <Link
-            to="/browse"
-            className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition-all cursor-pointer"
-          >
-            <span>Browse Current Inventory</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+        <div className="mt-14 rounded-3xl bg-ink px-8 py-12 text-center">
+          <MessageCircle size={28} className="mx-auto text-accent" />
+          <h3 className="mt-4 text-2xl font-extrabold text-white">Ready to find or sell your next car?</h3>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link to="/browse" className="rounded-xl bg-accent px-6 py-3 text-sm font-bold text-ink transition hover:bg-white">
+              Browse Cars
+            </Link>
+            <Link to="/sell" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-bold text-white transition hover:border-accent hover:text-accent">
+              Advertise Your Car
+            </Link>
+          </div>
         </div>
-
       </section>
-
     </div>
   )
 }
-
