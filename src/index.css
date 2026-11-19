@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* DoomOS brand palette: deep navy/ink, crisp white, racing red and accent chrome */
+  --color-ink: #0a0d14;
+  --color-charcoal: #121620;
+  --color-slate: #525a66;
+  --color-mist: #f4f6f9;
+  --color-line: #e2e6eb;
+
+  /* Brand Red inspired by client logo */
+  --color-accent: #e5192d;
+  --color-accent-dark: #b80e1f;
+  --color-accent-soft: #fef2f2;
+
+  --shadow-card: 0 1px 3px rgba(10, 13, 20, 0.05), 0 10px 28px -10px rgba(10, 13, 20, 0.12);
+  --shadow-lift: 0 4px 6px rgba(10, 13, 20, 0.07), 0 20px 44px -12px rgba(10, 13, 20, 0.22);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-charcoal font-sans antialiased;
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-mist);
+}
+::-webkit-scrollbar-thumb {
+  background: #c2c7ce;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9097a1;
+}
