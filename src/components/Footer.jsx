@@ -106,7 +106,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-accent shrink-0" />
-                <span>Sandton, Gauteng, South Africa</span>
+                <span>Polokwane, Limpopo, South Africa</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-accent shrink-0" />
