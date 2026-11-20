@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import {
-  Phone, Mail, MessageCircle, ShieldCheck, KeyRound, Handshake,
-  Building2, Home as HomeIcon, Hotel, ChevronRight,
+  Phone,
+  Mail,
+  MessageCircle,
+  ShieldCheck,
+  KeyRound,
+  Handshake,
+  Building2,
+  Home as HomeIcon,
+  Hotel,
+  ChevronRight,
 } from "lucide-react";
 import { PROPERTIES, AGENT } from "../data/properties";
 import PropertyCard from "../components/PropertyCard";
@@ -34,9 +42,17 @@ const services = [
 ];
 
 const typeCards = [
-  { icon: Building2, label: "Apartments & Flats", to: "/properties?type=Apartment" },
+  {
+    icon: Building2,
+    label: "Apartments & Flats",
+    to: "/properties?type=Apartment",
+  },
   { icon: HomeIcon, label: "Family Houses", to: "/properties?type=House" },
-  { icon: Hotel, label: "Townhouses & Cottages", to: "/properties?type=Townhouse" },
+  {
+    icon: Hotel,
+    label: "Townhouses & Cottages",
+    to: "/properties?type=Townhouse",
+  },
 ];
 
 export default function Home() {
@@ -46,10 +62,14 @@ export default function Home() {
     <div>
       {/* Hero */}
       <section className="relative">
-        <img src={heroImg} alt="Home in Pretoria" className="h-[520px] w-full object-cover" />
+        <img
+          src={heroImg}
+          alt="Home in Pretoria"
+          className="h-[480px] w-full object-cover sm:h-[520px]"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+        <div className="absolute inset-0 flex items-end pt-16 sm:items-center sm:pt-0">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-0">
             <div className="max-w-2xl text-white">
               <p className="mb-3 inline-flex rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide">
                 Pretoria · Gauteng
@@ -59,8 +79,9 @@ export default function Home() {
                 <span className="text-accent">Maxwell Maphakela</span>
               </h1>
               <p className="mt-4 max-w-xl text-lg text-slate">
-                Professional Property Practitioner helping families, professionals
-                and students secure quality apartments and houses to rent or buy.
+                Professional Property Practitioner helping families,
+                professionals and students secure quality apartments and houses
+                to rent or buy.
               </p>
               <div className="mt-8 max-w-3xl">
                 <SearchBar />
@@ -112,10 +133,17 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-8 flex items-end justify-between">
             <div>
-              <h2 className="text-3xl font-extrabold text-ink">Featured Properties</h2>
-              <p className="mt-1 text-slate">Handpicked homes available right now in Pretoria.</p>
+              <h2 className="text-3xl font-extrabold text-ink">
+                Featured Properties
+              </h2>
+              <p className="mt-1 text-slate">
+                Handpicked homes available right now in Pretoria.
+              </p>
             </div>
-            <Link to="/properties" className="hidden text-sm font-bold text-accent hover:underline sm:block">
+            <Link
+              to="/properties"
+              className="hidden text-sm font-bold text-accent hover:underline sm:block"
+            >
               View all →
             </Link>
           </div>
@@ -124,7 +152,10 @@ export default function Home() {
               <PropertyCard key={p.id} property={p} />
             ))}
           </div>
-          <Link to="/properties" className="mt-8 block text-center text-sm font-bold text-accent hover:underline sm:hidden">
+          <Link
+            to="/properties"
+            className="mt-8 block text-center text-sm font-bold text-accent hover:underline sm:hidden"
+          >
             View all properties →
           </Link>
         </div>
@@ -132,13 +163,19 @@ export default function Home() {
 
       {/* Services */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <h2 className="text-center text-3xl font-extrabold text-ink">How I Help You</h2>
+        <h2 className="text-center text-3xl font-extrabold text-ink">
+          How I Help You
+        </h2>
         <p className="mx-auto mt-2 max-w-xl text-center text-slate">
-          From the first viewing to the signed lease or offer — I'm with you every step.
+          From the first viewing to the signed lease or offer — I'm with you
+          every step.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="rounded-2xl border border-line p-6 shadow-card transition hover:-translate-y-1 hover:shadow-lift">
+            <div
+              key={title}
+              className="rounded-2xl border border-line p-6 shadow-card transition hover:-translate-y-1 hover:shadow-lift"
+            >
               <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent-soft text-accent">
                 <Icon size={22} />
               </span>
@@ -154,20 +191,33 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:flex-row lg:justify-between lg:text-left">
           <div>
             <h2 className="text-3xl font-extrabold">
-              Ready to find your home? <span className="text-accent">Let's talk.</span>
+              Ready to find your home?{" "}
+              <span className="text-accent">Let's talk.</span>
             </h2>
             <p className="mt-2 text-slate">
-              Call, WhatsApp or email Maxwell Maphakela today — viewings arranged at your convenience.
+              Call, WhatsApp or email Maxwell Maphakela today — viewings
+              arranged at your convenience.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href={AGENT.phoneLink} className="flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-bold hover:bg-accent-dark">
+            <a
+              href={AGENT.phoneLink}
+              className="flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-bold hover:bg-accent-dark"
+            >
               <Phone size={16} /> {AGENT.phone}
             </a>
-            <a href={AGENT.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-lg bg-green-600 px-5 py-3 text-sm font-bold hover:bg-green-700">
+            <a
+              href={AGENT.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded-lg bg-green-600 px-5 py-3 text-sm font-bold hover:bg-green-700"
+            >
               <MessageCircle size={16} /> WhatsApp
             </a>
-            <a href={AGENT.emailLink} className="flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-bold ring-1 ring-white/20 hover:bg-white/20">
+            <a
+              href={AGENT.emailLink}
+              className="flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 text-sm font-bold ring-1 ring-white/20 hover:bg-white/20"
+            >
               <Mail size={16} /> Email Me
             </a>
           </div>
