@@ -1,3 +1,27 @@
+export default function App() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white">
+      <div className="text-center px-6">
+        <h1 className="text-4xl font-bold mb-4">
+          Website Under Development
+        </h1>
+
+        <p className="text-gray-400 text-lg">
+          We're working hard to bring you something great.
+          Please check back soon.
+        </p>
+
+        <div className="mt-8">
+          <span className="text-sm text-gray-500">
+            © 2026 All Rights Reserved.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/*
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
@@ -40,3 +64,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+*/
