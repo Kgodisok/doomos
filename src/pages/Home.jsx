@@ -61,15 +61,15 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative">
+      <section className="relative isolate overflow-hidden">
         <img
           src={heroImg}
           alt="Home in Pretoria"
-          className="h-[480px] w-full object-cover sm:h-[520px]"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30" />
-        <div className="absolute inset-0 flex items-end pt-16 sm:items-center sm:pt-0">
-          <div className="mx-auto w-full max-w-7xl px-4 pb-10 sm:px-6 sm:pb-0">
+        <div className="relative">
+          <div className="mx-auto w-full max-w-7xl px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-20">
             <div className="max-w-2xl text-white">
               <p className="mb-3 inline-flex rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wide">
                 Pretoria · Gauteng
