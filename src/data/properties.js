@@ -29,10 +29,10 @@ export const PROPERTIES = [
     size: 78,
     suburb: "Menlyn",
     city: "Pretoria",
-    image: img("1560448075-bb485b067938"),
+    image: img("1522708323590-d24dbb6b0267"),
     gallery: [
-      img("1560448075-bb485b067938"),
       img("1522708323590-d24dbb6b0267"),
+      img("1560448075-bb485b067938"),
       img("1502672260266-1c1ef2d93688"),
     ],
     description:
