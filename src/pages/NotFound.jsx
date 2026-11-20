@@ -1,23 +1,19 @@
 import { Link } from "react-router-dom";
-import { CarFront } from "lucide-react";
+import { Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto flex min-h-[70vh] max-w-xl flex-col items-center justify-center px-4 text-center">
-      <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-ink text-accent">
-        <CarFront size={30} />
-      </span>
-      <h1 className="mt-6 text-5xl font-extrabold tracking-tight text-ink">
-        404
-      </h1>
-      <p className="mt-3 text-sm text-slate">
-        This road leads nowhere. The page you're looking for doesn't exist.
+    <div className="mx-auto max-w-3xl px-4 py-24 text-center">
+      <Home size={56} className="mx-auto text-accent" />
+      <h1 className="mt-4 text-4xl font-extrabold text-ink">Page not found</h1>
+      <p className="mt-2 text-slate">
+        The page you're looking for doesn't exist — but your next home might.
       </p>
       <Link
-        to="/"
-        className="mt-8 rounded-xl bg-accent px-6 py-3 text-sm font-bold text-ink transition hover:bg-accent-dark hover:text-white"
+        to="/properties"
+        className="mt-6 inline-block rounded-lg bg-accent px-6 py-3 text-sm font-bold text-white hover:bg-accent-dark"
       >
-        Back to Home
+        Browse Properties
       </Link>
     </div>
   );

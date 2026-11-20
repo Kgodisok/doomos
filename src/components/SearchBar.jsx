@@ -1,38 +1,75 @@
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, MapPin, Tag, Building2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { PROPERTY_TYPES, LISTING_TYPES } from "../data/properties";
 
-export default function SearchBar({ className = "" }) {
-  const [query, setQuery] = useState("");
+export default function SearchBar() {
   const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const [listing, setListing] = useState("All");
+  const [type, setType] = useState("All");
 
-  const handleSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    navigate(
-      query.trim()
-        ? `/browse?q=${encodeURIComponent(query.trim())}`
-        : "/browse",
-    );
+    const params = new URLSearchParams();
+    if (query.trim()) params.set("q", query.trim());
+    if (listing !== "All") params.set("listing", listing);
+    if (type !== "All") params.set("type", type);
+    navigate(`/properties?${params.toString()}`);
   };
 
   return (
     <form
-      onSubmit={handleSubmit}
-      className={`flex w-full max-w-2xl items-center gap-2 rounded-2xl bg-white p-2 shadow-lift ${className}`}
+      onSubmit={submit}
+      className="grid w-full gap-3 rounded-2xl bg-white p-4 shadow-lift sm:grid-cols-2 lg:grid-cols-4"
     >
-      <Search size={20} className="ml-3 shrink-0 text-slate" />
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search by make or model — e.g. Toyota Hilux, VW Golf…"
-        className="w-full bg-transparent py-2 text-sm text-ink outline-none placeholder:text-slate/70"
-      />
+      <div className="relative">
+        <MapPin
+          size={17}
+          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate"
+        />
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Suburb, e.g. Menlyn, Hatfield"
+          className="w-full rounded-lg border border-line py-2.5 pl-9 pr-3 text-sm outline-none focus:border-accent"
+        />
+      </div>
+      <div className="relative">
+        <Tag
+          size={17}
+          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate"
+        />
+        <select
+          value={listing}
+          onChange={(e) => setListing(e.target.value)}
+          className="w-full appearance-none rounded-lg border border-line bg-white py-2.5 pl-9 pr-3 text-sm outline-none focus:border-accent"
+        >
+          {LISTING_TYPES.map((t) => (
+            <option key={t}>{t}</option>
+          ))}
+        </select>
+      </div>
+      <div className="relative">
+        <Building2
+          size={17}
+          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate"
+        />
+        <select
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+          className="w-full appearance-none rounded-lg border border-line bg-white py-2.5 pl-9 pr-3 text-sm outline-none focus:border-accent"
+        >
+          {PROPERTY_TYPES.map((t) => (
+            <option key={t}>{t}</option>
+          ))}
+        </select>
+      </div>
       <button
         type="submit"
-        className="shrink-0 rounded-xl bg-accent px-6 py-3 text-sm font-bold text-ink transition hover:bg-accent-dark hover:text-white"
+        className="flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-white transition hover:bg-accent-dark"
       >
-        Search
+        <Search size={16} /> Search Properties
       </button>
     </form>
   );

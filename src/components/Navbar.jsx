@@ -1,130 +1,94 @@
-import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { PlusCircle, Menu, X } from 'lucide-react'
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { Menu, X, Phone, Home } from "lucide-react";
+import { AGENT } from "../data/properties";
+
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/properties", label: "Properties" },
+  { to: "/list-your-property", label: "List Your Property" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Browse Cars', path: '/browse' },
-    { name: 'Sell Your Car', path: '/sell' },
-    { name: 'About Us', path: '/about' },
-  ]
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink/95 backdrop-blur-md border-b border-white/10 text-white transition-all shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          
-          {/* Official Logo */}
-          <Link to="/" className="flex items-center gap-3 group py-1">
-            <div className="h-12 w-auto bg-white rounded-xl p-1 shadow-md shadow-accent/20 group-hover:scale-105 transition-transform duration-200 flex items-center justify-center">
-              <img
-                src="/logo.jpg"
-                alt="DooMos Cars - We Buy and Sell Second Hand and New Cars"
-                className="h-10 w-auto object-contain rounded-lg"
-              />
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="text-xl sm:text-2xl font-black tracking-tight text-white leading-none">
-                  DooMos <span className="text-accent">Cars</span>
-                </span>
-              </div>
-              <span className="text-[10px] tracking-wider uppercase font-semibold text-gray-300 -mt-0.5">
-                We Buy & Sell New & Pre-Owned
-              </span>
-            </div>
-          </Link>
+    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink text-accent">
+            <Home size={18} />
+          </span>
+          <span className="leading-tight">
+            <span className="block text-sm font-extrabold tracking-tight text-ink">
+              Maxwell Maphakela
+            </span>
+            <span className="block text-[11px] font-medium text-slate">
+              Property Practitioner · Pretoria
+            </span>
+          </span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `transition-colors duration-150 hover:text-accent relative py-1 ${
-                    isActive
-                      ? 'text-accent font-semibold after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent'
-                      : 'text-gray-300'
-                  }`
-                }
-              >
-                {link.name}
-              </NavLink>
-            ))}
-          </nav>
-
-          {/* Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link
-              to="/auth"
-              className="text-sm font-medium text-gray-300 hover:text-white px-3 py-2 transition-colors"
-            >
-              Sign In
-            </Link>
-            <Link
-              to="/sell"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-bold text-sm px-4 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
-            >
-              <PlusCircle className="w-4 h-4" />
-              <span>Sell Your Car</span>
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-3">
-            <Link
-              to="/sell"
-              className="bg-accent text-white text-xs font-bold px-3 py-2 rounded-lg"
-            >
-              Sell Car
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 focus:outline-none"
-              aria-label="Toggle navigation menu"
-            >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-
-        </div>
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div className="md:hidden border-t border-white/10 bg-ink px-4 pt-4 pb-6 space-y-3">
-          {navLinks.map((link) => (
+        <nav className="hidden items-center gap-7 md:flex">
+          {links.map((l) => (
             <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={() => setMobileOpen(false)}
+              key={l.to}
+              to={l.to}
               className={({ isActive }) =>
-                `block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
-                  isActive
-                    ? 'bg-white/10 text-accent font-semibold'
-                    : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                `text-sm font-medium transition-colors hover:text-ink ${
+                  isActive ? "text-accent" : "text-slate"
                 }`
               }
             >
-              {link.name}
+              {l.label}
             </NavLink>
           ))}
-          <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
-            <Link
-              to="/auth"
-              onClick={() => setMobileOpen(false)}
-              className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-medium text-gray-300 hover:text-white bg-white/5"
-            >
-              Login / Register
-            </Link>
-          </div>
+        </nav>
+
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href={AGENT.phoneLink}
+            className="flex items-center gap-2 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white shadow-card transition hover:bg-charcoal"
+          >
+            <Phone size={15} /> {AGENT.phone}
+          </a>
         </div>
+
+        <button
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-ink md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {open && (
+        <nav className="border-t border-line bg-white px-4 pb-4 pt-2 md:hidden">
+          {links.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              onClick={() => setOpen(false)}
+              className={({ isActive }) =>
+                `block rounded-lg px-3 py-2.5 text-sm font-medium ${
+                  isActive ? "bg-accent-soft text-accent" : "text-charcoal"
+                }`
+              }
+            >
+              {l.label}
+            </NavLink>
+          ))}
+          <a
+            href={AGENT.phoneLink}
+            className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2.5 text-sm font-semibold text-white"
+          >
+            <Phone size={15} /> Call {AGENT.name.split(" ")[0]}: {AGENT.phone}
+          </a>
+        </nav>
       )}
     </header>
-  )
+  );
 }

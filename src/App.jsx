@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import BrowseCars from "./pages/BrowseCars";
-import VehicleDetails from "./pages/VehicleDetails";
-import SellYourCar from "./pages/SellYourCar";
+import BrowseProperties from "./pages/BrowseProperties";
+import PropertyDetails from "./pages/PropertyDetails";
+import ListYourProperty from "./pages/ListYourProperty";
 import About from "./pages/About";
-import Login from "./pages/Login";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -27,11 +27,11 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/browse" element={<BrowseCars />} />
-            <Route path="/vehicle/:id" element={<VehicleDetails />} />
-            <Route path="/sell" element={<SellYourCar />} />
+            <Route path="/properties" element={<BrowseProperties />} />
+            <Route path="/property/:id" element={<PropertyDetails />} />
+            <Route path="/list-your-property" element={<ListYourProperty />} />
             <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
