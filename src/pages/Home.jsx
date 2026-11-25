@@ -61,7 +61,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs sm:text-sm text-gray-200">
                 <span className="flex items-center gap-1.5 font-semibold bg-red-900/60 border border-red-800 px-3 py-1.5 rounded-lg">
                   <Clock className="w-4 h-4 text-amber-400" />
-                  Open at 05:00 AM (Mon–Sat)
+                  Monday to Saturday OPEN – 5am till 7pm (Sunday – Closed)
                 </span>
                 <span className="flex items-center gap-1.5 font-semibold bg-red-900/60 border border-red-800 px-3 py-1.5 rounded-lg">
                   <ShieldCheck className="w-4 h-4 text-amber-400" />
@@ -120,9 +120,9 @@ export default function Home() {
                   <div className="flex items-start gap-3 bg-red-950/60 p-3 rounded-xl border border-red-800/60">
                     <Clock className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block text-sm">Operating Hours:</strong>
-                      <span>Monday to Saturday: 05:00 AM – 19:00 PM (5 AM - 7 PM)</span>
-                      <p className="text-amber-300 font-semibold mt-0.5">Sundays: Closed</p>
+                      <strong className="text-white block text-sm">TRADING HOURS:</strong>
+                      <span className="text-amber-300 font-bold block">Monday to Saturday OPEN – 5am till 7pm</span>
+                      <p className="text-red-400 font-semibold mt-0.5">Sunday – Closed</p>
                     </div>
                   </div>
 

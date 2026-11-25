@@ -100,11 +100,11 @@ export default function Contact() {
             <div className="w-12 h-12 rounded-xl bg-red-50 text-red-900 flex items-center justify-center font-bold">
               <Clock className="w-6 h-6 text-red-800" />
             </div>
-            <h3 className="font-bold text-base text-gray-900">Trading Hours</h3>
+            <h3 className="font-bold text-base text-gray-900">TRADING HOURS</h3>
             <div className="text-xs text-gray-600 space-y-1">
-              <p><strong>Monday – Saturday:</strong> 05:00 AM – 19:00 PM</p>
-              <p className="text-red-600 font-semibold"><strong>Sunday:</strong> CLOSED (Family Day)</p>
-              <p>Open early at 5 AM every morning</p>
+              <p className="font-bold text-gray-900">Monday to Saturday OPEN – 5am till 7pm</p>
+              <p className="text-red-600 font-bold">Sunday – Closed</p>
+              <p className="text-gray-500">Open early at 5am for commuters, caterers & hunters</p>
             </div>
           </div>
         </div>

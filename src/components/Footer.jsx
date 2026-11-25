@@ -93,18 +93,11 @@ export default function Footer() {
               Store Trading Hours
             </h4>
             <ul className="space-y-2 text-xs leading-relaxed text-gray-300">
-              <li className="p-2.5 rounded-lg bg-red-900/30 border border-red-800">
-                <span className="font-bold text-white block">Monday – Saturday:</span>
-                <span className="text-amber-300 font-semibold text-sm">05:00 AM – 19:00 PM (5 AM - 7 PM)</span>
-                <p className="text-[11px] text-gray-400 mt-1">Open at 5 AM for caterers, hunters & commuters.</p>
-              </li>
-              <li className="p-2.5 rounded-lg bg-red-900/30 border border-red-800">
-                <span className="font-bold text-white block">Sunday:</span>
-                <span className="text-red-400 font-semibold">CLOSED (Family & Rest Day)</span>
-              </li>
-              <li className="p-2.5 rounded-lg bg-red-900/30 border border-red-800">
-                <span className="font-bold text-white block">Public Holidays:</span>
-                <span className="text-gray-300">Selected holidays open 06:00 – 17:00</span>
+              <li className="p-3 rounded-xl bg-red-900/40 border border-amber-500/20">
+                <span className="font-extrabold text-amber-300 text-sm block">TRADING HOURS:</span>
+                <p className="text-white font-bold text-sm mt-1">Monday to Saturday OPEN – 5am till 7pm</p>
+                <p className="text-red-400 font-semibold mt-0.5">Sunday – Closed</p>
+                <p className="text-[11px] text-gray-400 mt-1">Open early at 5am for commuters, hunters & caterers.</p>
               </li>
             </ul>
           </div>

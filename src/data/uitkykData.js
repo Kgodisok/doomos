@@ -16,9 +16,9 @@ export const STORE_INFO = {
   email: "info@uitkykvleismark.co.za",
   managerEmail: "bestuur@uitkykvleismark.co.za",
   hours: {
-    weekdays: "Monday – Saturday: 05:00 AM – 19:00 PM",
-    sunday: "Sunday: Closed (Family & Rest Day)",
-    earlyBird: "Open at 05:00 AM for early birds, hunters & caterers",
+    weekdays: "Monday to Saturday OPEN – 5am till 7pm",
+    sunday: "Sunday – Closed",
+    earlyBird: "OPEN 5am till 7pm for early birds, caterers & hunters",
   },
   googleMapsUrl: "https://maps.google.com/?q=165+De+Boulevard+street,+Silverton,+Pretoria",
 }

@@ -39,7 +39,7 @@ export default function Navbar() {
             </span>
             <span className="flex items-center gap-1.5 font-medium">
               <Clock className="w-3.5 h-3.5 text-amber-400" />
-              Mon–Sat: 05:00 – 19:00 | Sunday Closed
+              Monday to Saturday OPEN – 5am till 7pm | Sunday – Closed
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -152,9 +152,9 @@ export default function Navbar() {
                 <MapPin className="w-3.5 h-3.5 text-amber-400" />
                 165 De Boulevard St, Silverton, Pretoria
               </p>
-              <p className="flex items-center gap-1.5">
+              <p className="flex items-center gap-1.5 font-medium">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
-                Mon–Sat: 05:00 – 19:00
+                Monday to Saturday OPEN – 5am till 7pm (Sunday – Closed)
               </p>
             </div>
 
