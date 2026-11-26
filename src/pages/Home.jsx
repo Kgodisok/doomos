@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Flame,
   Award,
@@ -12,17 +12,18 @@ import {
   Star,
   MapPin,
   CheckCircle2,
-} from 'lucide-react'
-import ProductCard from '../components/ProductCard'
+} from "lucide-react";
+import storeVideo from "../assets/video.mp4";
+import ProductCard from "../components/ProductCard";
 import {
   STORE_INFO,
   PRODUCTS,
   DEPARTMENTS,
   TESTIMONIALS,
-} from '../data/uitkykData'
+} from "../data/uitkykData";
 
 export default function Home() {
-  const featuredProducts = PRODUCTS.filter((p) => p.popular).slice(0, 6)
+  const featuredProducts = PRODUCTS.filter((p) => p.popular).slice(0, 6);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -50,11 +51,19 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-serif leading-tight">
-                Quality Meat at <span className="text-amber-400">Wholesale Prices</span> You Can Trust.
+                Quality Meat at{" "}
+                <span className="text-amber-400">Wholesale Prices</span> You Can
+                Trust.
               </h1>
 
               <p className="text-base sm:text-lg text-amber-100/90 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                Visit <strong className="text-white">Uitkyk Vleismark (Uitkyk Meat & Super Market)</strong> in Silverton, Pretoria. Famous for champion boerewors, award-winning biltong, A-grade Karoo lamb, and full supermarket grocery shopping under one roof.
+                Visit{" "}
+                <strong className="text-white">
+                  Uitkyk Vleismark (Uitkyk Meat & Super Market)
+                </strong>{" "}
+                in Silverton, Pretoria. Famous for champion boerewors,
+                award-winning biltong, A-grade Karoo lamb, and full supermarket
+                grocery shopping under one roof.
               </p>
 
               {/* Highlights pills */}
@@ -105,32 +114,49 @@ export default function Home() {
                       Uitkyk Meat & Supermarket
                     </h3>
                   </div>
-                  <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" title="Store is Active" />
+                  <span
+                    className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"
+                    title="Store is Active"
+                  />
                 </div>
 
                 <div className="space-y-3.5 text-xs text-gray-200">
                   <div className="flex items-start gap-3 bg-red-950/60 p-3 rounded-xl border border-red-800/60">
                     <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block text-sm">Store Address:</strong>
-                      <span>165 De Boulevard Street, Silverton, Pretoria, 0184</span>
+                      <strong className="text-white block text-sm">
+                        Store Address:
+                      </strong>
+                      <span>
+                        165 De Boulevard Street, Silverton, Pretoria, 0184
+                      </span>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 bg-red-950/60 p-3 rounded-xl border border-red-800/60">
                     <Clock className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block text-sm">TRADING HOURS:</strong>
-                      <span className="text-amber-300 font-bold block">Monday to Saturday OPEN – 5am till 7pm</span>
-                      <p className="text-red-400 font-semibold mt-0.5">Sunday – Closed</p>
+                      <strong className="text-white block text-sm">
+                        TRADING HOURS:
+                      </strong>
+                      <span className="text-amber-300 font-bold block">
+                        Monday to Saturday OPEN – 5am till 7pm
+                      </span>
+                      <p className="text-red-400 font-semibold mt-0.5">
+                        Sunday – Closed
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 bg-red-950/60 p-3 rounded-xl border border-red-800/60">
                     <Phone className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block text-sm">Direct Butchery Lines:</strong>
-                      <span className="text-amber-300 font-bold text-sm">012 804 3280 / +27 12 804 3280</span>
+                      <strong className="text-white block text-sm">
+                        Direct Butchery Lines:
+                      </strong>
+                      <span className="text-amber-300 font-bold text-sm">
+                        012 804 3280 / +27 12 804 3280
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -152,6 +178,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ----------------- STORE VIDEO SECTION ----------------- */}
+      <section className="py-20 bg-uitkyk-green text-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="inline-block text-xs font-black uppercase tracking-widest text-uitkyk-green-dark bg-uitkyk-lime px-3 py-1 rounded-full">
+              Inside Uitkyk Vleismark
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-white font-serif">
+              Step Inside Our Silverton Store
+            </h2>
+            <p className="text-sm sm:text-base text-uitkyk-lime-light leading-relaxed">
+              See our butchery counters, fresh produce aisles, and champion
+              boerewors being made — all under one roof since 1960.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <video
+              src={storeVideo}
+              controls
+              muted
+              autoPlay
+              loop
+              playsInline
+              preload="metadata"
+              poster=""
+              className="w-full rounded-3xl border-2 border-uitkyk-lime/40 shadow-2xl bg-black"
+            />
+            <p className="text-center text-[11px] text-uitkyk-lime-light/70 mt-4">
+              Filmed in store at 165 De Boulevard Street, Silverton, Pretoria.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ----------------- WEEKLY SPECIALS CALLOUT BANNER ----------------- */}
       <section className="bg-amber-500 text-red-950 py-4 px-4 border-b-2 border-red-900 font-semibold">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
@@ -160,7 +221,8 @@ export default function Home() {
               🔥 SPECIAL
             </span>
             <span>
-              <strong>Wing-It Wednesday & Rugby Braai Combos!</strong> Save big on marinated wings, champion boerewors & rump steaks this week.
+              <strong>Wing-It Wednesday & Rugby Braai Combos!</strong> Save big
+              on marinated wings, champion boerewors & rump steaks this week.
             </span>
           </div>
           <Link
@@ -185,7 +247,9 @@ export default function Home() {
                 Pretoria’s Most Popular Cuts
               </h2>
               <p className="text-sm text-gray-600 mt-2 max-w-xl">
-                Freshly prepared each morning by our master blockmen. Add directly to your digital order slip for instant WhatsApp confirmation.
+                Freshly prepared each morning by our master blockmen. Add
+                directly to your digital order slip for instant WhatsApp
+                confirmation.
               </p>
             </div>
             <Link
@@ -226,7 +290,9 @@ export default function Home() {
               More Than Just A Butchery
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Uitkyk gives you a complete supermarket experience. Pick up your braai meat, fresh bakery bread, cheeses, spices, fresh produce, and LP gas refills in a single trip.
+              Uitkyk gives you a complete supermarket experience. Pick up your
+              braai meat, fresh bakery bread, cheeses, spices, fresh produce,
+              and LP gas refills in a single trip.
             </p>
           </div>
 
@@ -239,8 +305,12 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-red-900 text-amber-400 flex items-center justify-center font-bold mb-4 shadow group-hover:scale-110 transition-transform">
                   <Flame className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{dept.title}</h3>
-                <p className="text-xs text-gray-600 leading-relaxed">{dept.desc}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {dept.title}
+                </h3>
+                <p className="text-xs text-gray-600 leading-relaxed">
+                  {dept.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -259,7 +329,9 @@ export default function Home() {
                 Feed Your Family For Less With Uitkyk Bulk Hampers
               </h2>
               <p className="text-amber-100/90 text-sm sm:text-base leading-relaxed">
-                Save hundreds of Rands every month with our pre-packed, vacuum-sealed monthly and weekend meat hampers. 100% prime A-grade cuts portioned for your freezer convenience.
+                Save hundreds of Rands every month with our pre-packed,
+                vacuum-sealed monthly and weekend meat hampers. 100% prime
+                A-grade cuts portioned for your freezer convenience.
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs text-amber-200">
                 <span>✓ Weekend Braai Hamper (R649)</span>
@@ -292,7 +364,9 @@ export default function Home() {
               What Pretoria Says About Uitkyk
             </h2>
             <p className="text-sm text-gray-600">
-              Generations of families across Silverton, Meyerspark, and Pretoria East rely on Uitkyk for every braai, Sunday roast, and holiday feast.
+              Generations of families across Silverton, Meyerspark, and Pretoria
+              East rely on Uitkyk for every braai, Sunday roast, and holiday
+              feast.
             </p>
           </div>
 
@@ -304,7 +378,10 @@ export default function Home() {
               >
                 <div className="flex items-center gap-1 text-amber-500">
                   {Array.from({ length: rev.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-amber-500 text-amber-500"
+                    />
                   ))}
                 </div>
                 <p className="text-xs text-gray-700 italic leading-relaxed">
@@ -312,8 +389,12 @@ export default function Home() {
                 </p>
                 <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
                   <div>
-                    <h4 className="text-xs font-bold text-gray-900">{rev.name}</h4>
-                    <span className="text-[10px] text-gray-500">{rev.suburb}</span>
+                    <h4 className="text-xs font-bold text-gray-900">
+                      {rev.name}
+                    </h4>
+                    <span className="text-[10px] text-gray-500">
+                      {rev.suburb}
+                    </span>
                   </div>
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 </div>
@@ -335,7 +416,8 @@ export default function Home() {
                 Open Monday to Saturday at 05:00 AM!
               </h2>
               <p className="text-xs sm:text-sm text-amber-100/80 max-w-lg">
-                165 De Boulevard Street, Silverton, Pretoria, 0184. Plenty of secure parking and freshly butchered meats waiting for you.
+                165 De Boulevard Street, Silverton, Pretoria, 0184. Plenty of
+                secure parking and freshly butchered meats waiting for you.
               </p>
             </div>
 
@@ -350,7 +432,7 @@ export default function Home() {
                 <span>Get Google Maps Directions</span>
               </a>
               <a
-                href={`tel:${STORE_INFO.phone.replace(/\s+/g, '')}`}
+                href={`tel:${STORE_INFO.phone.replace(/\s+/g, "")}`}
                 className="inline-flex items-center justify-center gap-2 bg-red-950 hover:bg-black text-white font-bold text-xs uppercase px-6 py-3.5 rounded-xl border border-red-800 transition-colors"
               >
                 <Phone className="w-4 h-4 text-amber-400" />
@@ -361,5 +443,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }
