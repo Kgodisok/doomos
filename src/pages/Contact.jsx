@@ -8,6 +8,24 @@ import {
   CheckCircle2,
   ExternalLink,
 } from 'lucide-react'
+
+function Facebook({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.47H15.2c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.43-4.92 8.43-9.94Z" />
+    </svg>
+  );
+}
+
+function Instagram({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 import { STORE_INFO } from '../data/uitkykData'
 
 export default function Contact() {
@@ -55,7 +73,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-3">
             <div className="w-12 h-12 rounded-xl bg-red-50 text-red-900 flex items-center justify-center font-bold">
               <MapPin className="w-6 h-6 text-red-800" />
@@ -93,6 +111,24 @@ export default function Contact() {
             >
               <MessageCircle className="w-4 h-4" />
               <span>Chat on WhatsApp</span>
+            </a>
+            <a
+              href={STORE_INFO.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 hover:text-blue-800 pt-1"
+            >
+              <Facebook className="w-4 h-4" />
+              <span>Facebook Page</span>
+            </a>
+            <a
+              href={STORE_INFO.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-pink-600 hover:text-pink-700 pt-1"
+            >
+              <Instagram className="w-4 h-4" />
+              <span>Instagram Page</span>
             </a>
           </div>
 

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Phone,
   Mail,
@@ -8,10 +8,42 @@ import {
   Award,
   ChevronRight,
   MessageCircle,
-} from 'lucide-react'
-import { STORE_INFO } from '../data/uitkykData'
+} from "lucide-react";
 
-const CURRENT_YEAR = new Date().getFullYear()
+function Facebook({ className = "" }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.91 3.77-3.91 1.09 0 2.24.2 2.24.2v2.47H15.2c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.43-4.92 8.43-9.94Z" />
+    </svg>
+  );
+}
+
+function Instagram({ className = "" }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+import { STORE_INFO } from "../data/uitkykData";
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer() {
   return (
@@ -34,11 +66,15 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
-              Pretoria’s legendary family-owned butcher and supermarket since 1960. Renowned for award-winning biltong, champion boerewors, Karoo lamb, and wholesale meat hampers.
+              Pretoria’s legendary family-owned butcher and supermarket since
+              1960. Renowned for award-winning biltong, champion boerewors,
+              Karoo lamb, and wholesale meat hampers.
             </p>
             <div className="p-3 rounded-xl bg-red-900/40 border border-amber-500/20 text-xs text-amber-200 flex items-center gap-2">
               <Award className="w-5 h-5 text-amber-400 shrink-0" />
-              <span>Voted Best of Pretoria Butchery Nominee & Trusted Local Supplier</span>
+              <span>
+                Voted Best of Pretoria Butchery Nominee & Trusted Local Supplier
+              </span>
             </div>
           </div>
 
@@ -49,37 +85,55 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/products" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                <Link
+                  to="/products"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
                   Champion Boerewors & Steaks
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                <Link
+                  to="/products"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
                   Award-Winning Biltong & Droëwors
                 </Link>
               </li>
               <li>
-                <Link to="/hampers" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                <Link
+                  to="/hampers"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
                   Bulk Family Meat Hampers
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                <Link
+                  to="/services"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
                   Venison & Game Processing
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                <Link
+                  to="/services"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
                   Spitbraai Machine Hire & Gas Refills
                 </Link>
               </li>
               <li>
-                <Link to="/specials" className="hover:text-amber-300 transition-colors flex items-center gap-1.5">
+                <Link
+                  to="/specials"
+                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
                   Wing-It Wednesday & Braai Specials
                 </Link>
@@ -94,10 +148,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs leading-relaxed text-gray-300">
               <li className="p-3 rounded-xl bg-red-900/40 border border-amber-500/20">
-                <span className="font-extrabold text-amber-300 text-sm block">TRADING HOURS:</span>
-                <p className="text-white font-bold text-sm mt-1">Monday to Saturday OPEN – 5am till 7pm</p>
-                <p className="text-red-400 font-semibold mt-0.5">Sunday – Closed</p>
-                <p className="text-[11px] text-gray-400 mt-1">Open early at 5am for commuters, hunters & caterers.</p>
+                <span className="font-extrabold text-amber-300 text-sm block">
+                  TRADING HOURS:
+                </span>
+                <p className="text-white font-bold text-sm mt-1">
+                  Monday to Saturday OPEN – 5am till 7pm
+                </p>
+                <p className="text-red-400 font-semibold mt-0.5">
+                  Sunday – Closed
+                </p>
+                <p className="text-[11px] text-gray-400 mt-1">
+                  Open early at 5am for commuters, hunters & caterers.
+                </p>
               </li>
             </ul>
           </div>
@@ -114,14 +176,42 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href={`tel:${STORE_INFO.phone.replace(/\s+/g, '')}`} className="font-bold text-white hover:text-amber-400">
+                <a
+                  href={`tel:${STORE_INFO.phone.replace(/\s+/g, "")}`}
+                  className="font-bold text-white hover:text-amber-400"
+                >
                   +27 12 804 3280 / 012 804 3280
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href={`mailto:${STORE_INFO.email}`} className="text-xs hover:text-amber-400">
+                <a
+                  href={`mailto:${STORE_INFO.email}`}
+                  className="text-xs hover:text-amber-400"
+                >
                   info@uitkykvleismark.co.za
+                </a>
+              </li>
+              <li>
+                <a
+                  href={STORE_INFO.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 hover:text-amber-400 transition-colors"
+                >
+                  <Facebook className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Follow us on Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={STORE_INFO.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 hover:text-amber-400 transition-colors"
+                >
+                  <Instagram className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Follow us on Instagram</span>
                 </a>
               </li>
               <li className="pt-2">
@@ -141,17 +231,47 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-          <p>© {CURRENT_YEAR} Uitkyk Vleismark (Pty) Ltd • Uitkyk Meat & Super Market. All rights reserved.</p>
+          <p>
+            © {CURRENT_YEAR} Uitkyk Vleismark (Pty) Ltd • Uitkyk Meat & Super
+            Market. All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
-            <Link to="/about" className="hover:text-gray-200">Our Heritage</Link>
-            <Link to="/products" className="hover:text-gray-200">Price List</Link>
-            <Link to="/contact" className="hover:text-gray-200">Store Directions</Link>
-            <a href={STORE_INFO.googleMapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-gray-200">
+            <Link to="/about" className="hover:text-gray-200">
+              Our Heritage
+            </Link>
+            <Link to="/products" className="hover:text-gray-200">
+              Price List
+            </Link>
+            <Link to="/contact" className="hover:text-gray-200">
+              Store Directions
+            </Link>
+            <a
+              href={STORE_INFO.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-200"
+            >
+              Facebook
+            </a>
+            <a
+              href={STORE_INFO.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-200"
+            >
+              Instagram
+            </a>
+            <a
+              href={STORE_INFO.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-200"
+            >
               Open in Google Maps
             </a>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

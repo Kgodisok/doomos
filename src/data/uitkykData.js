@@ -21,6 +21,8 @@ export const STORE_INFO = {
     earlyBird: "OPEN 5am till 7pm for early birds, caterers & hunters",
   },
   googleMapsUrl: "https://maps.google.com/?q=165+De+Boulevard+street,+Silverton,+Pretoria",
+  facebookUrl: "https://www.facebook.com/UitkykVleismark",
+  instagramUrl: "https://www.instagram.com/uitkykvleismark/",
 }
 
 export const CATEGORIES = [
