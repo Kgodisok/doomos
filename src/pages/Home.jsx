@@ -214,7 +214,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="relative rounded-3xl overflow-hidden border-2 border-uitkyk-lime/40 shadow-2xl bg-black">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-uitkyk-lime/40 shadow-2xl bg-black mx-auto max-w-2xl">
                 <video
                   src={storyVideo}
                   controls
@@ -223,7 +223,7 @@ export default function Home() {
                   loop
                   playsInline
                   preload="metadata"
-                  className="w-full aspect-video object-contain"
+                  className="w-full aspect-video object-cover"
                 />
                 <button
                   type="button"
@@ -254,7 +254,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="relative rounded-3xl overflow-hidden border-2 border-uitkyk-lime/40 shadow-2xl bg-black">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-uitkyk-lime/40 shadow-2xl bg-black mx-auto max-w-3xl">
                 <video
                   src={storeVideo}
                   controls
@@ -263,7 +263,7 @@ export default function Home() {
                   loop
                   playsInline
                   preload="metadata"
-                  className="w-full aspect-video object-contain"
+                  className="w-full aspect-video object-cover"
                 />
                 <button
                   type="button"
