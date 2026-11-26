@@ -14,6 +14,15 @@
   --color-warm-gray: #f3f0e8;
   --color-ink: #18181b;
   --color-charcoal: #27272a;
+
+  /* Uitkyk Vleismark Official Brand Palette (from uitkykvleismark.co.za) */
+  /* Dark header/nav green, mid logo green, lime accent, soft lime tint */
+  --color-uitkyk-green: #0b5b24;
+  --color-uitkyk-green-dark: #084419;
+  --color-uitkyk-green-light: #0f6a34;
+  --color-uitkyk-lime: #8fd14f;
+  --color-uitkyk-lime-light: #b2e37d;
+  --color-uitkyk-lime-dark: #6db03a;
 }
 
 html {

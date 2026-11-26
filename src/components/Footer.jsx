@@ -47,20 +47,20 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="bg-red-950 text-gray-300 border-t-4 border-amber-500 pt-16 pb-10">
+    <footer className="bg-uitkyk-green text-gray-200 border-t-4 border-uitkyk-lime pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-red-900/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-uitkyk-green-dark/80">
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-500 text-red-950 font-black flex items-center justify-center text-lg shadow border-2 border-amber-300">
-                <Flame className="w-6 h-6 fill-red-950 stroke-amber-500" />
+              <div className="w-10 h-10 rounded-xl bg-uitkyk-lime text-uitkyk-green-dark font-black flex items-center justify-center text-lg shadow border-2 border-uitkyk-lime-light">
+                <Flame className="w-6 h-6 fill-uitkyk-green-dark stroke-uitkyk-lime" />
               </div>
               <div>
                 <span className="text-xl font-black uppercase text-white font-serif block leading-none">
                   UITKYK VLEISMARK
                 </span>
-                <span className="text-[10px] tracking-widest uppercase text-amber-400 font-bold">
+                <span className="text-[10px] tracking-widest uppercase text-uitkyk-lime font-bold">
                   Meat & Super Market
                 </span>
               </div>
@@ -70,8 +70,8 @@ export default function Footer() {
               1960. Renowned for award-winning biltong, champion boerewors,
               Karoo lamb, and wholesale meat hampers.
             </p>
-            <div className="p-3 rounded-xl bg-red-900/40 border border-amber-500/20 text-xs text-amber-200 flex items-center gap-2">
-              <Award className="w-5 h-5 text-amber-400 shrink-0" />
+            <div className="p-3 rounded-xl bg-uitkyk-green-dark/60 border border-uitkyk-lime/20 text-xs text-uitkyk-lime-light flex items-center gap-2">
+              <Award className="w-5 h-5 text-uitkyk-lime shrink-0" />
               <span>
                 Voted Best of Pretoria Butchery Nominee & Trusted Local Supplier
               </span>
@@ -80,61 +80,61 @@ export default function Footer() {
 
           {/* Quick Departments */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-amber-400 border-b border-red-900 pb-2">
+            <h4 className="text-xs font-black uppercase tracking-wider text-uitkyk-lime border-b border-uitkyk-green-dark pb-2">
               Departments & Specialties
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   to="/products"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-uitkyk-lime transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-uitkyk-lime" />
                   Champion Boerewors & Steaks
                 </Link>
               </li>
               <li>
                 <Link
                   to="/products"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-uitkyk-lime transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-uitkyk-lime" />
                   Award-Winning Biltong & Droëwors
                 </Link>
               </li>
               <li>
                 <Link
                   to="/hampers"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-uitkyk-lime transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-uitkyk-lime" />
                   Bulk Family Meat Hampers
                 </Link>
               </li>
               <li>
                 <Link
                   to="/services"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-uitkyk-lime transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-uitkyk-lime" />
                   Venison & Game Processing
                 </Link>
               </li>
               <li>
                 <Link
                   to="/services"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-uitkyk-lime transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-uitkyk-lime" />
                   Spitbraai Machine Hire & Gas Refills
                 </Link>
               </li>
               <li>
                 <Link
                   to="/specials"
-                  className="hover:text-amber-300 transition-colors flex items-center gap-1.5"
+                  className="hover:text-uitkyk-lime transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400" />
+                  <ChevronRight className="w-3.5 h-3.5 text-uitkyk-lime" />
                   Wing-It Wednesday & Braai Specials
                 </Link>
               </li>
@@ -143,18 +143,18 @@ export default function Footer() {
 
           {/* Trading Hours */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-amber-400 border-b border-red-900 pb-2">
+            <h4 className="text-xs font-black uppercase tracking-wider text-uitkyk-lime border-b border-uitkyk-green-dark pb-2">
               Store Trading Hours
             </h4>
             <ul className="space-y-2 text-xs leading-relaxed text-gray-300">
-              <li className="p-3 rounded-xl bg-red-900/40 border border-amber-500/20">
-                <span className="font-extrabold text-amber-300 text-sm block">
+              <li className="p-3 rounded-xl bg-uitkyk-green-dark/60 border border-uitkyk-lime/20">
+                <span className="font-extrabold text-uitkyk-lime text-sm block">
                   TRADING HOURS:
                 </span>
                 <p className="text-white font-bold text-sm mt-1">
                   Monday to Saturday OPEN – 5am till 7pm
                 </p>
-                <p className="text-red-400 font-semibold mt-0.5">
+                <p className="text-uitkyk-lime font-semibold mt-0.5">
                   Sunday – Closed
                 </p>
                 <p className="text-[11px] text-gray-400 mt-1">
@@ -166,19 +166,19 @@ export default function Footer() {
 
           {/* Direct Contact & Location */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-amber-400 border-b border-red-900 pb-2">
+            <h4 className="text-xs font-black uppercase tracking-wider text-uitkyk-lime border-b border-uitkyk-green-dark pb-2">
               Contact & Silverton Store
             </h4>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-uitkyk-lime shrink-0 mt-0.5" />
                 <span>165 De Boulevard Street, Silverton, Pretoria, 0184</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
                 <a
                   href={`tel:${STORE_INFO.phone.replace(/\s+/g, "")}`}
-                  className="font-bold text-white hover:text-amber-400"
+                  className="font-bold text-white hover:text-uitkyk-lime"
                 >
                   +27 12 804 3280 / 012 804 3280
                 </a>
@@ -187,7 +187,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
                 <a
                   href={`mailto:${STORE_INFO.email}`}
-                  className="text-xs hover:text-amber-400"
+                  className="text-xs hover:text-uitkyk-lime"
                 >
                   info@uitkykvleismark.co.za
                 </a>
@@ -197,9 +197,9 @@ export default function Footer() {
                   href={STORE_INFO.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-2.5 hover:text-uitkyk-lime transition-colors"
                 >
-                  <Facebook className="w-4 h-4 text-amber-400 shrink-0" />
+                  <Facebook className="w-4 h-4 text-uitkyk-lime shrink-0" />
                   <span>Follow us on Facebook</span>
                 </a>
               </li>
@@ -208,9 +208,9 @@ export default function Footer() {
                   href={STORE_INFO.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 hover:text-amber-400 transition-colors"
+                  className="flex items-center gap-2.5 hover:text-uitkyk-lime transition-colors"
                 >
-                  <Instagram className="w-4 h-4 text-amber-400 shrink-0" />
+                  <Instagram className="w-4 h-4 text-uitkyk-lime shrink-0" />
                   <span>Follow us on Instagram</span>
                 </a>
               </li>
