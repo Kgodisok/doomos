@@ -13,7 +13,8 @@ import {
   MapPin,
   CheckCircle2,
 } from "lucide-react";
-import storeVideo from "../assets/video.mp4";
+import storyVideo from "../assets/theuitkykstory.mp4";
+import storeVideo from "../assets/whatweoffervidoe.mp4";
 import ProductCard from "../components/ProductCard";
 import {
   STORE_INFO,
@@ -186,29 +187,63 @@ export default function Home() {
               Inside Uitkyk Vleismark
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-white font-serif">
-              Step Inside Our Silverton Store
+              Our Story & Our Store
             </h2>
             <p className="text-sm sm:text-base text-uitkyk-lime-light leading-relaxed">
-              See our butchery counters, fresh produce aisles, and champion
-              boerewors being made — all under one roof since 1960.
+              Discover the Uitkyk story — three generations of family butchery
+              — and see what we offer in our Silverton store today.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <video
-              src={storeVideo}
-              controls
-              muted
-              autoPlay
-              loop
-              playsInline
-              preload="metadata"
-              poster=""
-              className="w-full rounded-3xl border-2 border-uitkyk-lime/40 shadow-2xl bg-black"
-            />
-            <p className="text-center text-[11px] text-uitkyk-lime-light/70 mt-4">
-              Filmed in store at 165 De Boulevard Street, Silverton, Pretoria.
-            </p>
+          <div className="max-w-5xl mx-auto space-y-16">
+            {/* Video 1: The Uitkyk Story */}
+            <div>
+              <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-3 mb-5 text-center sm:text-left">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-black font-serif text-uitkyk-lime">
+                    The Uitkyk Story
+                  </h3>
+                  <p className="text-xs sm:text-sm text-uitkyk-lime-light mt-1">
+                    How a family butchery in Silverton became a Pretoria
+                    legend since 1960.
+                  </p>
+                </div>
+              </div>
+              <video
+                src={storyVideo}
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full rounded-3xl border-2 border-uitkyk-lime/40 shadow-2xl bg-black"
+              />
+            </div>
+
+            {/* Video 2: What We Offer */}
+            <div>
+              <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-3 mb-5 text-center sm:text-left">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-black font-serif text-uitkyk-lime">
+                    What We Offer
+                  </h3>
+                  <p className="text-xs sm:text-sm text-uitkyk-lime-light mt-1">
+                    A walk through our butchery counters, biltong bar,
+                    groceries and weekly specials.
+                  </p>
+                </div>
+              </div>
+              <video
+                src={storeVideo}
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full rounded-3xl border-2 border-uitkyk-lime/40 shadow-2xl bg-black"
+              />
+              <p className="text-center text-[11px] text-uitkyk-lime-light/70 mt-4">
+                Filmed in store at 165 De Boulevard Street, Silverton, Pretoria.
+              </p>
+            </div>
           </div>
         </div>
       </section>
