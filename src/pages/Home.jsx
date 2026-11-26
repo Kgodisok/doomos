@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Flame,
@@ -12,6 +12,8 @@ import {
   Star,
   MapPin,
   CheckCircle2,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import storyVideo from "../assets/theuitkykstory.mp4";
 import storeVideo from "../assets/whatweoffervidoe.mp4";
@@ -24,7 +26,10 @@ import {
 } from "../data/uitkykData";
 
 export default function Home() {
-  const featuredProducts = PRODUCTS.filter((p) => p.popular).slice(0, 6);
+  const featuredProducts = PRODUCTS.filter((p) => p.popular).slice(0, 6)
+
+  const [storyMuted, setStoryMuted] = useState(true)
+  const [offerMuted, setOfferMuted] = useState(true);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -209,14 +214,31 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <video
-                src={storyVideo}
-                controls
-                muted
-                playsInline
-                preload="metadata"
-                className="w-full rounded-3xl border-2 border-uitkyk-lime/40 shadow-2xl bg-black"
-              />
+              <div className="relative rounded-3xl overflow-hidden border-2 border-uitkyk-lime/40 shadow-2xl bg-black">
+                <video
+                  src={storyVideo}
+                  controls
+                  muted={storyMuted}
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="w-full aspect-video object-contain"
+                />
+                <button
+                  type="button"
+                  onClick={() => setStoryMuted((m) => !m)}
+                  aria-label={storyMuted ? "Unmute video" : "Mute video"}
+                  title={storyMuted ? "Click for sound" : "Mute"}
+                  className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-uitkyk-lime flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
+                >
+                  {storyMuted ? (
+                    <VolumeX className="w-5 h-5" />
+                  ) : (
+                    <Volume2 className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
             </div>
 
             {/* Video 2: What We Offer */}
@@ -232,14 +254,31 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <video
-                src={storeVideo}
-                controls
-                muted
-                playsInline
-                preload="metadata"
-                className="w-full rounded-3xl border-2 border-uitkyk-lime/40 shadow-2xl bg-black"
-              />
+              <div className="relative rounded-3xl overflow-hidden border-2 border-uitkyk-lime/40 shadow-2xl bg-black">
+                <video
+                  src={storeVideo}
+                  controls
+                  muted={offerMuted}
+                  autoPlay
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="w-full aspect-video object-contain"
+                />
+                <button
+                  type="button"
+                  onClick={() => setOfferMuted((m) => !m)}
+                  aria-label={offerMuted ? "Unmute video" : "Mute video"}
+                  title={offerMuted ? "Click for sound" : "Mute"}
+                  className="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-uitkyk-lime flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer"
+                >
+                  {offerMuted ? (
+                    <VolumeX className="w-5 h-5" />
+                  ) : (
+                    <Volume2 className="w-5 h-5" />
+                  )}
+                </button>
+              </div>
               <p className="text-center text-[11px] text-uitkyk-lime-light/70 mt-4">
                 Filmed in store at 165 De Boulevard Street, Silverton, Pretoria.
               </p>
